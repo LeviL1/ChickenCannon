@@ -7,11 +7,15 @@ public class CannonManager : MonoBehaviour
   public GameObject cannonBall;
   public Transform firePoint;
   public LineRenderer lineRenderer;
+  public float numberOfChickens = 0;
 
   private const int N_Trajectory_Points = 10;
   private bool _pressingMouse;
   private Camera _cam;
   private Vector3 _initialVelocity;
+  public GameObject _specialBall1;
+  public GameObject _specialBall2;
+  public GameObject _normalBall;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,7 @@ public class CannonManager : MonoBehaviour
     }
     if (Input.GetMouseButtonUp(0))
     {
+      numberOfChickens += 1;
       _pressingMouse = false;
       lineRenderer.enabled = false;
       _Fire();
@@ -44,13 +49,25 @@ public class CannonManager : MonoBehaviour
       _initialVelocity = mousePos - firePoint.position;
       updateLineRender();
     }
+    if (Input.GetKeyDown(KeyCode.Alpha1)) 
+    {
+      cannonBall = _specialBall1;
+    }
+    if (Input.GetKeyDown(KeyCode.Alpha2)) 
+    {
+      cannonBall = _specialBall2;
+    }
+    if (Input.GetKeyDown(KeyCode.Alpha3)) 
+    {
+      cannonBall = _normalBall;
+    }
     }
   private void _Fire() 
   {
     GameObject _cannonBall = Instantiate(cannonBall, firePoint.position, Quaternion.Inverse(Quaternion.identity));
 
     Rigidbody rb = _cannonBall.GetComponent<Rigidbody>();
-    rb.AddForce(_initialVelocity, ForceMode.Impulse);
+    rb.AddForce(_initialVelocity *2, ForceMode.Impulse);
   }
   private void updateLineRender() 
   {

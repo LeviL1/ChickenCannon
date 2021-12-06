@@ -60,6 +60,19 @@ CapsuleCollider:
   m_Height: 0.64
   m_Direction: 1
   m_Center: {x: 0, y: 0.27, z: 0}
+--- !u!114 &-4984148382446852368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966786365031847380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72296b5e76c8024bacacae4f775b78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 1985126042}
 --- !u!114 &2535023365908555209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,22 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007294cbb398b07478c2aee13c59891f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3387172473836871972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966786365031847380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511c7562eeb06fd4ea90c4f473bf282b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint1: {fileID: 1966977181165120383}
-  spawnPoint2: {fileID: 6735894253736492544}
-  spawnpoint3: {fileID: 4155366626880261814}
-  chicken: {fileID: 3966786365031847380, guid: f79a302466a27794dbcbd780a1445502, type: 3}
 --- !u!1 &6475538697706118793
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_Name
-      value: Toon Chicken Variant
+      value: Toon Chicken Variant 3
       objectReference: {fileID: 0}
     - target: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_TagString

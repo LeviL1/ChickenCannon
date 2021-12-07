@@ -39,16 +39,7 @@ public class CannonManager : MonoBehaviour
       lineRenderer.enabled = false;
       _Fire();
     }
-    if (_pressingMouse) 
-    {
-      //coordinate transform screen> world
-      Vector3 mousePos  = _cam.WorldToScreenPoint(Input.mousePosition);
-      mousePos.z = 0f;
-      //look at
-      transform.LookAt(mousePos);
-      _initialVelocity = mousePos - firePoint.position;
-      updateLineRender();
-    }
+    
     if (Input.GetKeyDown(KeyCode.Alpha1)) 
     {
       cannonBall = _specialBall1;
@@ -62,6 +53,19 @@ public class CannonManager : MonoBehaviour
       cannonBall = _normalBall;
     }
     }
+  private void FixedUpdate()
+  {
+    if (_pressingMouse)
+    {
+      //coordinate transform screen> world
+      Vector3 mousePos = _cam.WorldToScreenPoint(Input.mousePosition);
+      mousePos.z = 0f;
+      //look at
+      transform.LookAt(mousePos);
+      _initialVelocity = mousePos - firePoint.position;
+      updateLineRender();
+    }
+  }
   private void _Fire() 
   {
     GameObject _cannonBall = Instantiate(cannonBall, firePoint.position, Quaternion.Inverse(Quaternion.identity));
